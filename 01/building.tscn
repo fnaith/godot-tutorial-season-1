@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmeet713pqreh"]
+
+[ext_resource type="Texture2D" uid="uid://baqi6f4oyadgi" path="res://icon.svg" id="1_wlb0h"]
+[ext_resource type="Script" uid="uid://c6304f3m2naqy" path="res://01/building.gd" id="1_xeixt"]
+
+[node name="BuildingUi" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xeixt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 72.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 72.0
+texture_normal = ExtResource("1_wlb0h")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_right = 200.0
+offset_bottom = 72.0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
