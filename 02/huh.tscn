@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://tccm6l7q4ffo"]
+
+[ext_resource type="Texture2D" uid="uid://cfv2jx8uuklkv" path="res://02/Huh Cat Meme Green Screen 0-5 screenshot.png" id="1_51y3n"]
+[ext_resource type="Texture2D" uid="uid://c4fpr7c85fg64" path="res://02/Huh Cat Meme Green Screen 0-8 screenshot.png" id="2_extxn"]
+
+[node name="Huh" type="Node2D"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_51y3n")
+texture_pressed = ExtResource("2_extxn")
