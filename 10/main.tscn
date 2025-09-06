@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bl5r1vuywu2ji"]
 
-[ext_resource type="PackedScene" uid="uid://c48tq11epf5mx" path="res://01/cookie.tscn" id="1_51tti"]
-[ext_resource type="Script" uid="uid://mbs4pqdjnk1j" path="res://01/main.gd" id="1_kbhc1"]
-[ext_resource type="PackedScene" uid="uid://dmeet713pqreh" path="res://01/building.tscn" id="2_twhpi"]
+[ext_resource type="PackedScene" uid="uid://c48tq11epf5mx" path="res://10/cookie.tscn" id="1_51tti"]
+[ext_resource type="Script" uid="uid://mbs4pqdjnk1j" path="res://10/main.gd" id="1_kbhc1"]
+[ext_resource type="PackedScene" uid="uid://dmeet713pqreh" path="res://10/building.tscn" id="2_twhpi"]
 [ext_resource type="Texture2D" uid="uid://baqi6f4oyadgi" path="res://icon.svg" id="3_rrgdh"]
 
 [node name="Main" type="Node2D"]

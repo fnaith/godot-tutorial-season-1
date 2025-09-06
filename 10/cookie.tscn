@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c48tq11epf5mx"]
 
-[ext_resource type="Script" uid="uid://cfmhrofcso77r" path="res://01/cookie.gd" id="1_cgts3"]
+[ext_resource type="Script" uid="uid://cfmhrofcso77r" path="res://10/cookie.gd" id="1_cgts3"]
 [ext_resource type="Texture2D" uid="uid://baqi6f4oyadgi" path="res://icon.svg" id="2_eej44"]
 
 [node name="Cookie" type="Control"]

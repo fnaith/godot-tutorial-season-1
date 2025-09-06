@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dmeet713pqreh"]
 
 [ext_resource type="Texture2D" uid="uid://baqi6f4oyadgi" path="res://icon.svg" id="1_wlb0h"]
-[ext_resource type="Script" uid="uid://c6304f3m2naqy" path="res://01/building.gd" id="1_xeixt"]
+[ext_resource type="Script" uid="uid://c6304f3m2naqy" path="res://10/building.gd" id="1_xeixt"]
 
 [node name="BuildingUi" type="Control"]
 layout_mode = 3

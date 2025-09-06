@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://daiaphviv70yh"]
 
-[ext_resource type="Script" uid="uid://cwjqihsfvlukx" path="res://01/tiered_upgrade.gd" id="1_ydw14"]
+[ext_resource type="Script" uid="uid://cwjqihsfvlukx" path="res://10/tiered_upgrade.gd" id="1_ydw14"]
 [ext_resource type="Texture2D" uid="uid://baqi6f4oyadgi" path="res://icon.svg" id="2_y02ii"]
 
 [node name="TieredUpgrade" type="Control"]

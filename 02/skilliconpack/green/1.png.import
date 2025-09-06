@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4fpr7c85fg64"
-path="res://.godot/imported/Huh Cat Meme Green Screen 0-8 screenshot.png-9537f3c385a22f15eed62874026b66ee.ctex"
+uid="uid://ddu51sjxh271f"
+path="res://.godot/imported/1.png-d018fbaa989e88087f1fb6ad134028e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://02/Huh Cat Meme Green Screen 0-8 screenshot.png"
-dest_files=["res://.godot/imported/Huh Cat Meme Green Screen 0-8 screenshot.png-9537f3c385a22f15eed62874026b66ee.ctex"]
+source_file="res://02/skilliconpack/green/1.png"
+dest_files=["res://.godot/imported/1.png-d018fbaa989e88087f1fb6ad134028e4.ctex"]
 
 [params]
 
