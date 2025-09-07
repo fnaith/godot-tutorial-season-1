@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bshdilkw7exxu"]
+
+[ext_resource type="Script" uid="uid://bgffb2wvb6l7o" path="res://02/pop.gd" id="1_k7h1r"]
+[ext_resource type="Texture2D" uid="uid://cvfwkm6qmlrhi" path="res://02/Normal.png" id="1_oh1e1"]
+[ext_resource type="Texture2D" uid="uid://x5ugfpbidoqu" path="res://02/Pressed.png" id="2_k7h1r"]
+
+[node name="Pop" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_k7h1r")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_oh1e1")
+texture_pressed = ExtResource("2_k7h1r")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_right = 400.0
+offset_bottom = 80.0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

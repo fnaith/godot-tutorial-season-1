@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl5r1vuywu2ji"]
+
+[ext_resource type="Script" uid="uid://mbs4pqdjnk1j" path="res://10/cookie_clicker.gd" id="1_rnpon"]
+[ext_resource type="PackedScene" uid="uid://c48tq11epf5mx" path="res://10/cookie.tscn" id="2_ejkra"]
+[ext_resource type="PackedScene" uid="uid://dmeet713pqreh" path="res://10/building.tscn" id="3_rjltn"]
+[ext_resource type="Texture2D" uid="uid://baqi6f4oyadgi" path="res://icon.svg" id="4_c64yq"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_rnpon")
+
+[node name="TieredUpgrades" type="Node2D" parent="."]
+
+[node name="Cookie" parent="." instance=ExtResource("2_ejkra")]
+offset_left = 400.0
+offset_top = 100.0
+offset_right = 400.0
+offset_bottom = 100.0
+
+[node name="Buildings" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1080.0
+offset_right = 1120.0
+offset_bottom = 40.0
+
+[node name="Building" parent="Buildings" instance=ExtResource("3_rjltn")]
+building_type = "Cursor"
+icon = ExtResource("4_c64yq")
+
+[node name="Building2" parent="Buildings" instance=ExtResource("3_rjltn")]
+offset_top = 72.0
+offset_bottom = 72.0
+building_type = "Grandma"
+icon = ExtResource("4_c64yq")
+
+[node name="Building3" parent="Buildings" instance=ExtResource("3_rjltn")]
+offset_top = 144.0
+offset_bottom = 144.0
+building_type = "Farm"
+icon = ExtResource("4_c64yq")
+
+[node name="Building4" parent="Buildings" instance=ExtResource("3_rjltn")]
+offset_top = 216.0
+offset_bottom = 216.0
+building_type = "Mine"
+icon = ExtResource("4_c64yq")
+
+[node name="Building5" parent="Buildings" instance=ExtResource("3_rjltn")]
+offset_top = 288.0
+offset_bottom = 288.0
+building_type = "Factory"
+icon = ExtResource("4_c64yq")

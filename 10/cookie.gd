@@ -1,6 +1,4 @@
-extends Control
-
-@onready var label = $RichTextLabel
+extends Node
 
 var elapsed_time = 0.0
 
@@ -33,4 +31,4 @@ func _on_texture_button_pressed() -> void:
 	update_label()
 
 func update_label():
-	label.text = "%f" % [CookieData.cookies]
+	$Label.text = "%f" % [CookieData.cookies]

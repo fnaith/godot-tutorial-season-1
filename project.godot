@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+TalentData="*res://05/talent_data.gd"
 CookieData="*res://10/cookie_data.gd"
 
 [display]
