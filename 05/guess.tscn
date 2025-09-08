@@ -20,8 +20,10 @@ offset_bottom = 38.0
 
 [node name="Label" type="RichTextLabel" parent="Name"]
 layout_mode = 0
-offset_right = 100.0
-offset_bottom = 40.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = 38.0
 bbcode_enabled = true
 
 [node name="Language" type="ColorRect" parent="."]
@@ -32,8 +34,11 @@ offset_right = 138.0
 offset_bottom = 38.0
 
 [node name="Label" type="RichTextLabel" parent="Language"]
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 38.0
+offset_bottom = 38.0
 bbcode_enabled = true
 
 [node name="Generation" type="ColorRect" parent="."]
@@ -44,8 +49,11 @@ offset_right = 318.0
 offset_bottom = 38.0
 
 [node name="Label" type="RichTextLabel" parent="Generation"]
-offset_right = 180.0
-offset_bottom = 40.0
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 178.0
+offset_bottom = 38.0
 bbcode_enabled = true
 
 [node name="Hair" type="ColorRect" parent="."]
@@ -56,8 +64,11 @@ offset_right = 418.0
 offset_bottom = 38.0
 
 [node name="Label" type="RichTextLabel" parent="Hair"]
-offset_right = 100.0
-offset_bottom = 40.0
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = 38.0
 bbcode_enabled = true
 
 [node name="Height" type="ColorRect" parent="."]
@@ -68,8 +79,11 @@ offset_right = 478.0
 offset_bottom = 38.0
 
 [node name="Label" type="RichTextLabel" parent="Height"]
-offset_right = 60.0
-offset_bottom = 40.0
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 58.0
+offset_bottom = 38.0
 bbcode_enabled = true
 
 [node name="Birthday" type="ColorRect" parent="."]
@@ -80,6 +94,9 @@ offset_right = 558.0
 offset_bottom = 38.0
 
 [node name="Label" type="RichTextLabel" parent="Birthday"]
-offset_right = 80.0
-offset_bottom = 40.0
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 78.0
+offset_bottom = 38.0
 bbcode_enabled = true

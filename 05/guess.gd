@@ -1,46 +1,33 @@
-extends Node
+extends Control
 
-func update_view(answer, talent_key):
-	var answer_setting = TalentData.talent_settings[answer]
-	var talent_setting = TalentData.talent_settings[talent_key]
+func update_view(answer_key, guess_key, x, y):
+	position = Vector2(x, y)
 
-	$Name.color = Color.GREEN if answer_setting["name"] == talent_setting["name"] else Color.RED
-	$Name/Label.text = "[center]%s[/center]" % talent_setting["name"]
+	var answer = TalentData.talent_settings[answer_key]
+	var guess = TalentData.talent_settings[guess_key]
 
-	$Language.color = Color.GREEN if answer_setting["language"] == talent_setting["language"] else Color.RED
-	$Language/Label.text = "[center]%s[/center]" % talent_setting["language"]
+	$Name.color = Color.GREEN if answer["name"] == guess["name"] else Color.RED
+	$Name/Label.text = "[center]%s[/center]" % guess["name"]
 
-	if answer_setting["generation"] == talent_setting["generation"]:
-		$Generation.color = Color.GREEN
-		$Generation/Label.text = "[center]%s[/center]" % talent_setting["generation_name"]
-	else:
-		$Generation.color = Color.RED
-		if answer_setting["generation"] < talent_setting["generation"]:
-			$Generation/Label.text = "[center]< %s[/center]" % talent_setting["generation_name"]
-		else:
-			$Generation/Label.text = "[center]> %s[/center]" % talent_setting["generation_name"]
+	$Language.color = Color.GREEN if answer["language"] == guess["language"] else Color.RED
+	$Language/Label.text = "[center]%s[/center]" % guess["language"]
 
-	$Hair.color = Color.GREEN if answer_setting["hair"] == talent_setting["hair"] else Color.RED
-	$Hair/Label.text = "[center]%s[/center]" % talent_setting["hair"]
+	$Generation.color = Color.GREEN if answer["gen"] == guess["gen"] else Color.RED
+	$Generation/Label.text = _build_compare_hint(answer["gen"], guess["gen"], guess["gen_name"])
 
-	if answer_setting["height"] == talent_setting["height"]:
-		$Height.color = Color.GREEN
-		$Height/Label.text = "[center]%s[/center]" % talent_setting["height"]
-	else:
-		$Height.color = Color.RED
-		if answer_setting["height"] < talent_setting["height"]:
-			$Height/Label.text = "[center]< %s[/center]" % talent_setting["height"]
-		else:
-			$Height/Label.text = "[center]> %s[/center]" % talent_setting["height"]
+	$Hair.color = Color.GREEN if answer["hair"] == guess["hair"] else Color.RED
+	$Hair/Label.text = "[center]%s[/center]" % guess["hair"]
 
-	var month = talent_setting["birthday"] / 100
-	var day = talent_setting["birthday"] - month * 100
-	if answer_setting["birthday"] == talent_setting["birthday"]:
-		$Birthday.color = Color.GREEN
-		$Birthday/Label.text = "[center]%d/%d[/center]" % [month, day]
-	else:
-		$Birthday.color = Color.RED
-		if answer_setting["birthday"] < talent_setting["birthday"]:
-			$Birthday/Label.text = "[center]< %d/%d[/center]" % [month, day]
-		else:
-			$Birthday/Label.text = "[center]> %d/%d[/center]" % [month, day]
+	$Height.color = Color.GREEN if answer["height"] == guess["height"] else Color.RED
+	$Height/Label.text = _build_compare_hint(answer["height"], guess["height"], guess["height"])
+
+	var month = guess["birthday"] / 100
+	var day = guess["birthday"] - month * 100
+	var date = "%d/%d" % [month, day]
+	$Birthday.color = Color.GREEN if answer["birthday"] == guess["birthday"] else Color.RED
+	$Birthday/Label.text = _build_compare_hint(answer["birthday"], guess["birthday"], date)
+
+func _build_compare_hint(a, b, hint):
+	if a == b:
+		return "[center]%s[/center]" % hint
+	return "[center]%s %s[/center]" % ["<" if a < b else ">", hint]

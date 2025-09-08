@@ -1,36 +1,34 @@
 extends Node
 
-var is_playing = true
+var answer_key = TalentData.talent_settings.keys().pick_random()
 var left_guess = 5
-var answer
 
 func _ready() -> void:
-	answer = TalentData.talent_settings.keys().pick_random()
 	var talent_scene = preload("./talent.tscn")
-	for y in TalentData.talent_grid.size():
-		var talent_list = TalentData.talent_grid[y]
-		for x in talent_list.size():
-			var talent_key = talent_list[x]
+	for y in TalentData.talent_keys.size():
+		for x in TalentData.talent_keys[y].size():
+			var talent_key = TalentData.talent_keys[y][x]
 			var talent = talent_scene.instantiate()
 			$Talents.add_child(talent)
-			talent.set_talent_key(self, talent_key)
-			talent.position = Vector2(x * 100, y * 40)
+			talent.set_talent_key(self, talent_key, x * 100, y * 40)
 	$Label.text = "[center]Guesses left : %d[/center]" % left_guess
 
-func check_answer(talent_key):
-	if is_playing:
+func check_answer(guess_key):
+	if left_guess > 0:
 		var guess_scene = preload("./guess.tscn")
 		var guess = guess_scene.instantiate()
 		$Guesses.add_child(guess)
-		guess.position = Vector2(0, (5 - left_guess) * 40)
-		guess.update_view(answer, talent_key)
-		if answer == talent_key:
-			is_playing = false
-			$Label.text = "[center]You Win![/center]"
+		guess.update_view(answer_key, guess_key, 0, (5 - left_guess) * 40)
+		if answer_key == guess_key:
+			_end_game("You Win!")
 		else:
 			left_guess -= 1
 			if left_guess > 0:
 				$Label.text = "[center]Guesses left : %d[/center]" % left_guess
 			else:
-				is_playing = false
-				$Label.text = "[center]You Lose.[/center]"
+				_end_game("You Lose.")
+
+func _end_game(message):
+	left_guess = 0
+	var answer = TalentData.talent_settings[answer_key]["name"]
+	$Label.text = "[center]%s\nThe answer is\n%s[/center]" % [message, answer]
