@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 	update_view()
 
 func update_view():
-	owned = 0 != (CookieData.building_data[building_type][1] & (1 << tier))
+	owned = CookieData.building_data[building_type][tier] == 1
 	var count = CookieData.building_data[building_type][0]
 	unlocked = count >= CookieData.building_settings[building_type][2][tier - 1][1]
 	$Button.modulate.a = 1.0 if unlocked else 0.2
@@ -28,5 +28,5 @@ func _on_texture_button_pressed() -> void:
 		var cost = CookieData.building_settings[building_type][2][tier - 1][2]
 		if CookieData.cookies >= cost:
 			CookieData.cookies -= cost
-			CookieData.building_data[building_type][1] |= (1 << tier)
+			CookieData.building_data[building_type][tier] = 1
 			update_view()

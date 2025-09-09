@@ -17,7 +17,7 @@ var talent_keys = [
 	["Shiori_Novella", "Koseki_Bijou", "Nerissa_Ravencroft", "Fuwawa_Abyssgard", "Mococo_Abyssgard"],
 	["Hiodoshi_Ao", "Otonose_Kanade", "Ichijou_Ririka", "Juufuutei_Raden", "Todoroki_Hajime"],
 	["Elizabeth_Rose_Bloodflame", "Gigi_Murin", "Cecilia_Immergreen", "Raora_Panthera"],
-	["Isaki_Riona", "Koganei_Niko", "Mizumiya_Su", "Rindo_Chihaya", "Kikirara_Vivi"]
+	["Isaki_Riona", "Koganei_Niko", "Mizumiya_Su", "Rindo_Chihaya", "Kikirara_Vivi"],
 ]
 
 var talent_settings = {
@@ -790,5 +790,5 @@ var talent_settings = {
 		"height": 161,
 		"birthday": 827,
 		"bg_color": Color(0.90196, 0.28627, 0.60784)
-	}
+	},
 }

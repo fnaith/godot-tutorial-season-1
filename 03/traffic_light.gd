@@ -1,26 +1,27 @@
 extends Node
 
-var index = randi_range(0, 2)
+var light_id = randi_range(0, 2)
 
 func _ready() -> void:
-	_reset()
+	update_view()
 
-func _reset():
-	index += 1
-	if index == 3:
-		index = 0
-	$Red.modulate.a = 1 if 0 == index else 0.5
-	$Yellow.modulate.a = 1 if 1 == index else 0.5
-	$Green.modulate.a = 1 if 2 == index else 0.5
+func update_view() -> void:
+	$Red.modulate.a = 1.0 if 0 == light_id else 0.5
+	$Yellow.modulate.a = 1.0 if 1 == light_id else 0.5
+	$Green.modulate.a = 1.0 if 2 == light_id else 0.5
+
+func next_light(pressed_light_id):
+	if light_id == pressed_light_id:
+		light_id += 1
+		if light_id == 3:
+			light_id = 0
+		update_view()
 
 func _on_red_pressed() -> void:
-	if index == 0:
-		_reset()
+	next_light(0)
 
 func _on_yellow_pressed() -> void:
-	if index == 1:
-		_reset()
+	next_light(1)
 
 func _on_green_pressed() -> void:
-	if index == 2:
-		_reset()
+	next_light(2)
