@@ -1,37 +1,36 @@
-huh
+huh(10)
 install Godot/create project/相容性/1280x720/F6
 Control Scene/Drag Image
 TextureButton/normal/pressed
-
-pop
-Control Scene/Drag Image/Script
+pop(13)
+Control Scene/Drag Image/Script/Coord
 var/_process
-$/=/+/+=/%
+$/=/+=/%
 TextureButton/normal/pressed/_pressed
 RichTextLabel/text/position/size
-
-traffic light
+traffic light(11)
 Control Scene/Drag Image/Script/Rename
 var/_ready/function/randi_range
-$/=/+/+=/==/if/else/if-else
+$/=/+=/==/if/else/if-else
 TextureButton/normal/pressed/_pressed/modulate
-
-1/8192
-Control Scene/Drag Image/Script/Rename
+ColorRect/color/Color
+1/8192(9)
+Control Scene/Copy Image/Script/Rename
 var/_ready/function/randi_range/load
-$/=/+=/==/%/if/else/""/\n/[]
+$/=/+=/==/>/%/if/else/""/\n/[]
 TextureButton/_pressed/texture_normal
 RichTextLabel/text/position/size/BBCode Enabled/<center>
-
-quiz
-???
-
+quiz(11)
+Control Scene/Script/Rename/Globals
+var/_ready/function/preload/instantiate/add_child
+$/=/+=/==/*///%/if/else/if-else/\n/[]/{}/for/size/keys/pick_random
+TextureButton/_pressed/texture_normal
+RichTextLabel/text/position/size/BBCode Enabled/<center>
 Cookie Clicker
-Control Scene/Drag Image/Script/Rename
-var/_ready/_process/function/load/preload/instantiate/pow/ceil
-$/=/+=/-=/==/</>=/%/if/else/""/\n/[]/{}/for
+Control Scene/Copy Image/Script/Rename
+var/_ready/_process/function/load/preload/instantiate/add_child
+$/=/+=/-=/==/</>=/%/if/else/""/\n/[]/{}/for/pow/ceil
 TextureButton/_pressed/texture_normal
 RichTextLabel/text/position/size/BBCode Enabled/<center>
 
-globals/rect
 @export/type

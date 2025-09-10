@@ -1,9 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://46rjxeaoub36"]
+[gd_scene load_steps=2 format=3 uid="uid://46rjxeaoub36"]
 
 [ext_resource type="Script" uid="uid://djiynplffum6e" path="res://03/traffic_light.gd" id="1_uu4d4"]
-[ext_resource type="Texture2D" uid="uid://d06fmrd06jlp8" path="res://03/rpginventoryiconspackvol1/green.png" id="2_wbk07"]
-[ext_resource type="Texture2D" uid="uid://b52ih46n6jkk" path="res://03/rpginventoryiconspackvol1/red.png" id="3_30g13"]
-[ext_resource type="Texture2D" uid="uid://ceipt3xltvhli" path="res://03/rpginventoryiconspackvol1/yellow.png" id="3_wbk07"]
 
 [node name="TrafficLight" type="Control"]
 layout_mode = 3
@@ -14,26 +11,39 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uu4d4")
 
-[node name="Red" type="TextureButton" parent="."]
+[node name="Red" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
-texture_normal = ExtResource("3_30g13")
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0, 0, 1)
 
-[node name="Yellow" type="TextureButton" parent="."]
+[node name="Button" type="TextureButton" parent="Red"]
 layout_mode = 0
-offset_left = 64.0
-offset_right = 128.0
-offset_bottom = 64.0
-texture_normal = ExtResource("3_wbk07")
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Green" type="TextureButton" parent="."]
+[node name="Yellow" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 128.0
-offset_right = 192.0
-offset_bottom = 64.0
-texture_normal = ExtResource("2_wbk07")
+offset_left = 40.0
+offset_right = 80.0
+offset_bottom = 40.0
 
-[connection signal="pressed" from="Red" to="." method="_on_red_pressed"]
-[connection signal="pressed" from="Yellow" to="." method="_on_yellow_pressed"]
-[connection signal="pressed" from="Green" to="." method="_on_green_pressed"]
+[node name="Button" type="TextureButton" parent="Yellow"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Green" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 120.0
+offset_bottom = 40.0
+
+[node name="Button" type="TextureButton" parent="Green"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Red/Button" to="." method="_on_red_button_pressed"]
+[connection signal="pressed" from="Yellow/Button" to="." method="_on_yellow_button_pressed"]
+[connection signal="pressed" from="Green/Button" to="." method="_on_green_button_pressed"]

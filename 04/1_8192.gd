@@ -17,12 +17,12 @@ func check_answer(color):
 	if is_playing:
 		history += "\n青            " if answer == 0 else "\n            綠"
 		if answer == color:
-			if level == 13:
-				_end_game("You Win! All Level")
-			else:
+			if 13 > level:
 				level += 1
 				answer = randi_range(0, 1)
 				update_view()
+			else:
+				_end_game("You Win! All Level")
 		else:
 			_end_game("You Lose. Max Level")
 
