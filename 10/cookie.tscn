@@ -14,10 +14,24 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("2_eej44")
 
-[node name="Label" type="RichTextLabel" parent="."]
+[node name="Cookie" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 12.0
-offset_top = -40.0
-offset_right = 112.0
+offset_left = 128.0
+offset_right = 378.0
+offset_bottom = 40.0
+
+[node name="CPS" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 40.0
+offset_right = 378.0
+offset_bottom = 80.0
+
+[node name="CPC" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 80.0
+offset_right = 378.0
+offset_bottom = 120.0
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
