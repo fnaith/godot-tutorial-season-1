@@ -33,7 +33,7 @@ func get_cpc():
 	for tier in range(1, 3):
 		if CookieData.building_data[building_type][tier] == 1:
 			base_cpc *= 2
-	return count * base_cpc + non_cursor_gain
+	return base_cpc + non_cursor_gain
 
 func get_building_cps(building_type):
 	var base_cps = CookieData.building_settings[building_type][1]

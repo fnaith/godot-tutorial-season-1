@@ -2,7 +2,7 @@ extends Node
 
 @export var building_type := ""
 @export var icon : Resource
-var cost : float
+var cost
 
 func _ready() -> void:
 	$Button.texture_normal = icon
@@ -18,8 +18,7 @@ func update_cost():
 	update_view()
 
 func update_view():
-	$Button.disabled = CookieData.cookies < cost
-	$Button.scale = Vector2.ONE * (0.8 if $Button.disabled else 1.0)
+	$ColorRect.color = Color.GRAY if CookieData.cookies < cost else Color.BLACK
 	$Label.text = "%d" % [CookieData.building_data[building_type][0]]
 
 func _on_texture_button_pressed() -> void:
