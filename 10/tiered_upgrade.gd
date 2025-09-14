@@ -1,15 +1,17 @@
-extends Node
+extends Control
 
-var building_type = ""
-var tier = 0
 var tier_setting
 var building_data
+var tier
 
-func _ready() -> void:
+func set_building_type(building_type, upgrade_tier, icon, x, y):
 	tier_setting = CookieData.building_settings[building_type][2]
 	building_data = CookieData.building_data[building_type]
+	tier = upgrade_tier
+	$Button.texture_normal = icon
 	var tier_upgrade = tier_setting[tier - 1]
 	$Button.tooltip_text = tier_upgrade[0] + "\n" + tier_upgrade[3]
+	position = Vector2(x, y)
 	update_view()
 
 func _process(_delta: float) -> void:

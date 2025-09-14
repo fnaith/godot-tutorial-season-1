@@ -428,4 +428,4 @@ var building_data = { # count, tier 1~15
 	"You" : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 }
 
-var cookies = 10.0
+var cookies = pow(10, 18)
