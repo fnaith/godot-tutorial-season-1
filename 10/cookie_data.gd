@@ -428,4 +428,11 @@ var building_data = { # count, tier 1~15
 	"You" : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 }
 
+var colors = [
+	Color.WHITE, Color.LIGHT_GRAY, Color.GRAY, Color.BLACK,
+	Color.BROWN, Color.RED, Color.ORANGE, Color.YELLOW,
+	Color.LIME, Color.GREEN, Color.CYAN, Color.LIGHT_BLUE,
+	Color.BLUE, Color.PURPLE, Color.MAGENTA, Color.PINK,
+]
+
 var cookies = pow(10, 18)

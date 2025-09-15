@@ -8,6 +8,7 @@ func set_building_type(building_type, upgrade_tier, icon, x, y):
 	tier_setting = CookieData.building_settings[building_type][2]
 	building_data = CookieData.building_data[building_type]
 	tier = upgrade_tier
+	$Panel.color = CookieData.colors[tier]
 	$Button.texture_normal = icon
 	var tier_upgrade = tier_setting[tier - 1]
 	$Button.tooltip_text = tier_upgrade[0] + "\n" + tier_upgrade[3]
@@ -22,8 +23,8 @@ func update_view():
 	var count = building_data[0]
 	var unlocked = count >= tier_setting[tier - 1][1]
 	var cost = tier_setting[tier - 1][2]
-	$Button.modulate.a = 1.0 if unlocked else 0.5
-	$ColorRect.color = Color.GREEN if owned else (Color.GRAY if !unlocked || CookieData.cookies < cost else Color.YELLOW)
+	$Button.modulate.a = 1.0 if owned else 0.0 if unlocked else 0.5
+	$ColorRect.color = Color.TRANSPARENT if owned else (Color.WHITE if !unlocked || CookieData.cookies < cost else Color.TRANSPARENT)
 
 func _on_texture_button_pressed() -> void:
 	var owned = building_data[tier] == 1

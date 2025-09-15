@@ -7,6 +7,11 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ydw14")
 
+[node name="Panel" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 36.0
+offset_bottom = 36.0
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 1.0
