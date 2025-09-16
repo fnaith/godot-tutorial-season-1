@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://fwxu5t34toso"]
+
+[ext_resource type="Script" uid="uid://b8v17q63xbc3m" path="res://14/1_8192.gd" id="1_twtmk"]
+
+[node name="1_8192" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_twtmk")
+
+[node name="Blue" type="TextureButton" parent="."]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 256.0
+offset_bottom = 336.0
+
+[node name="Green" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 80.0
+offset_right = 712.0
+offset_bottom = 336.0
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 456.0
+offset_bottom = 336.0
+bbcode_enabled = true
+
+[connection signal="pressed" from="Blue" to="." method="_on_blue_pressed"]
+[connection signal="pressed" from="Green" to="." method="_on_green_pressed"]
