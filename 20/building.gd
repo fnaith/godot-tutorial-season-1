@@ -1,5 +1,7 @@
 extends Control
 
+signal on_easter_egg_pressed()
+
 var building_setting
 var building_data
 var cost
@@ -29,3 +31,6 @@ func _on_texture_button_pressed() -> void:
 		CookieData.cookies -= cost
 		building_data[0] += 1
 		update_cost()
+
+func _on_easter_egg_pressed() -> void:
+	on_easter_egg_pressed.emit()

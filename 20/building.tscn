@@ -40,4 +40,14 @@ offset_right = 156.0
 offset_bottom = 88.0
 bbcode_enabled = true
 
+[node name="EasterEgg" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 4.0
+offset_right = 156.0
+offset_bottom = 68.0
+ignore_texture_size = true
+stretch_mode = 4
+
 [connection signal="pressed" from="Button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="EasterEgg" to="." method="_on_easter_egg_pressed"]
