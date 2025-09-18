@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://h055d5b7abbt"]
 
-[ext_resource type="Script" uid="uid://hgryhiqw7st1" path="res://15/quiz.gd" id="1_bpmel"]
+[ext_resource type="Script" uid="uid://mdb3riisf68g" path="res://15/quiz.gd" id="1_bpmel"]
 
 [node name="Quiz" type="Control"]
 layout_mode = 3

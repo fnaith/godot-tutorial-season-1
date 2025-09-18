@@ -435,4 +435,14 @@ var colors = [
 	Color.BLUE, Color.PURPLE, Color.MAGENTA, Color.PINK,
 ]
 
-var cookies = pow(10, 18)
+var mini_game_settings = {
+	"1/8192" : ["res://14/1_8192.tscn"],
+	"quiz" : ["res://15/quiz.tscn"],
+}
+
+var mini_game_data = {
+	"1/8192" : [0],
+	"quiz" : [0],
+}
+
+var cookies = pow(10, 0)

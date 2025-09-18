@@ -16,6 +16,9 @@ func get_cpc():
 	var building_type = "Cursor"
 	var base_cpc = 1
 	var count = CookieData.building_data[building_type][0]
+	for tier in range(1, 3):
+		if CookieData.building_data[building_type][tier] == 1:
+			base_cpc *= 2
 	var non_cursor_gain = 0
 	if CookieData.building_data[building_type][4] == 1:
 		non_cursor_gain = 0.1
@@ -30,15 +33,18 @@ func get_cpc():
 		for building_data in CookieData.building_data.values():
 			total_count += building_data[0]
 		non_cursor_gain *= (total_count - count)
-	for tier in range(1, 3):
-		if CookieData.building_data[building_type][tier] == 1:
-			base_cpc *= 2
-	return base_cpc + non_cursor_gain
+	base_cpc += non_cursor_gain
+	var mini_game_upgrade_1 = CookieData.mini_game_data["1/8192"][0]
+	var mini_game_upgrade_2 = pow(2, CookieData.mini_game_data["quiz"][0])
+	return base_cpc * (mini_game_upgrade_1 + mini_game_upgrade_2)
 
 func get_building_cps(building_type):
 	var base_cps = CookieData.building_settings[building_type][1]
 	var count = CookieData.building_data[building_type][0]
 	if building_type == "Cursor":
+		for tier in range(1, 3):
+			if CookieData.building_data[building_type][tier] == 1:
+				base_cps *= 2
 		var non_cursor_gain = 0
 		if CookieData.building_data[building_type][4] == 1:
 			non_cursor_gain = 0.1
@@ -53,9 +59,6 @@ func get_building_cps(building_type):
 			for building_data in CookieData.building_data.values():
 				total_count += building_data[0]
 			non_cursor_gain *= (total_count - count)
-		for tier in range(1, 3):
-			if CookieData.building_data[building_type][tier] == 1:
-				base_cps *= 2
 		return count * base_cps + non_cursor_gain
 	else:
 		for tier in range(1, 15):

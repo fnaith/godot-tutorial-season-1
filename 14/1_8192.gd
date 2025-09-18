@@ -1,6 +1,6 @@
 extends Node
 
-signal on_end_game(is_win, max_level)
+signal on_end_game(score)
 
 var level = 1
 var answer = randi_range(0, 1)
@@ -24,14 +24,14 @@ func check_answer(color):
 				answer = randi_range(0, 1)
 				update_view()
 			else:
-				_end_game("You Win! All Level", true)
+				_end_game("You Win! All Level", level)
 		else:
-			_end_game("You Lose. Max Level", false)
+			_end_game("You Lose. Max Level", level - 1)
 
-func _end_game(message, is_win):
+func _end_game(message, level):
 	is_playing = false
 	$Label.text = "[center]%s : %d%s[/center]" % [message, level, history]
-	on_end_game.emit(is_win, level)
+	on_end_game.emit(pow(2, level))
 
 func _on_blue_pressed() -> void:
 	check_answer(0)
