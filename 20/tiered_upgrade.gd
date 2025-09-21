@@ -1,17 +1,18 @@
 extends Control
 
+var tier
 var tier_setting
 var building_data
-var tier
+var owned
+var locked
 
 func set_building_type(building_type, upgrade_tier, icon, x, y):
-	tier_setting = CookieData.building_settings[building_type][2]
-	building_data = CookieData.building_data[building_type]
 	tier = upgrade_tier
+	tier_setting = CookieData.building_settings[building_type][2][tier - 1]
+	building_data = CookieData.building_data[building_type]
 	$Panel.color = CookieData.colors[tier]
 	$Button.texture_normal = icon
-	var tier_upgrade = tier_setting[tier - 1]
-	$Button.tooltip_text = tier_upgrade[0] + "\n" + tier_upgrade[3]
+	$Button.tooltip_text = tier_setting[0] + "\n" + tier_setting[3]
 	position = Vector2(x, y)
 	update_view()
 
@@ -19,21 +20,15 @@ func _process(_delta: float) -> void:
 	update_view()
 
 func update_view():
-	var owned = building_data[tier] == 1
-	var count = building_data[0]
-	var unlocked = count >= tier_setting[tier - 1][1]
-	var cost = tier_setting[tier - 1][2]
-	$Button.modulate.a = 1.0 if owned else 0.0 if unlocked else 0.5
-	$ColorRect.color = Color.TRANSPARENT if owned else (Color.WHITE if !unlocked || CookieData.cookies < cost else Color.TRANSPARENT)
+	owned = building_data[tier] == 1
+	locked = building_data[0] < tier_setting[1]
+	var can_buy = CookieData.cookies >= tier_setting[2]
+	$Button.modulate.a = 1.0 if owned else (0.5 if locked else 0.0)
+	$ColorRect.color.a = 0.0 if owned || (!locked && can_buy) else 1.0
 
 func _on_texture_button_pressed() -> void:
-	var owned = building_data[tier] == 1
-	var count = building_data[0]
-	var unlocked = count >= tier_setting[tier - 1][1]
-	if !owned && unlocked:
-		var cost = tier_setting[tier - 1][2]
-		if CookieData.cookies >= cost:
-			CookieData.cookies -= cost
-			building_data[tier] = 1
-			$Button.disabled = true
-			update_view()
+	if !owned && !locked && CookieData.cookies >= tier_setting[2]:
+		CookieData.cookies -= tier_setting[2]
+		building_data[tier] = 1
+		$Button.disabled = true
+		update_view()

@@ -442,7 +442,71 @@ var mini_game_settings = {
 
 var mini_game_data = {
 	"1/8192" : [0],
-	"quiz" : [0],
+	"quiz" : [400],
 }
 
-var cookies = pow(10, 0)
+var cookies = pow(10, 99.9)
+
+
+func get_cpc():
+	var building_type = "Cursor"
+	var base_cpc = 1
+	var count = building_data[building_type][0]
+	for tier in range(1, 3):
+		if building_data[building_type][tier] == 1:
+			base_cpc *= 2
+	var non_cursor_gain = 0
+	if building_data[building_type][4] == 1:
+		non_cursor_gain = 0.1
+		if building_data[building_type][5] == 1:
+			non_cursor_gain += 0.5
+		if building_data[building_type][6] == 1:
+			non_cursor_gain += 1.0
+		for tier in range(7, 15):
+			if building_data[building_type][tier] == 1:
+				non_cursor_gain += 2.0
+		var total_count = 0
+		for building_type_data in building_data.values():
+			total_count += building_type_data[0]
+		non_cursor_gain *= (total_count - count)
+	base_cpc += non_cursor_gain
+	var mini_game_upgrade_1 = mini_game_data["1/8192"][0]
+	var mini_game_upgrade_2 = pow(2, mini_game_data["quiz"][0])
+	return base_cpc * (mini_game_upgrade_1 + mini_game_upgrade_2)
+
+func get_building_cps(building_type):
+	var base_cps = building_settings[building_type][1]
+	var count = building_data[building_type][0]
+	base_cps *= count
+	if building_type == "Cursor":
+		for tier in range(1, 3):
+			if building_data[building_type][tier] == 1:
+				base_cps *= 2
+		var non_cursor_gain = 0
+		if building_data[building_type][4] == 1:
+			non_cursor_gain = 0.1
+			if building_data[building_type][5] == 1:
+				non_cursor_gain += 0.5
+			if building_data[building_type][6] == 1:
+				non_cursor_gain += 1.0
+			for tier in range(7, 15):
+				if building_data[building_type][tier] == 1:
+					non_cursor_gain += 2.0
+			var total_count = 0
+			for building_type_data in building_data.values():
+				total_count += building_type_data[0]
+			non_cursor_gain *= (total_count - count)
+		base_cps += non_cursor_gain
+	else:
+		for tier in range(1, 15):
+			if building_data[building_type][tier] == 1:
+				base_cps *= 2
+	var mini_game_upgrade_1 = mini_game_data["1/8192"][0]
+	var mini_game_upgrade_2 = pow(2, mini_game_data["quiz"][0])
+	return base_cps * (mini_game_upgrade_1 + mini_game_upgrade_2)
+
+func get_cps():
+	var cps = 0.0
+	for building_type in building_settings.keys():
+		cps += get_building_cps(building_type)
+	return cps

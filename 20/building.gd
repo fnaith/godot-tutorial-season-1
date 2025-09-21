@@ -2,12 +2,12 @@ extends Control
 
 signal on_easter_egg_pressed()
 
-var building_setting
+var base_cost
 var building_data
 var cost
 
 func set_building_type(building_type, icon, x, y):
-	building_setting = CookieData.building_settings[building_type]
+	base_cost = CookieData.building_settings[building_type][0]
 	building_data = CookieData.building_data[building_type]
 	$Button.texture_normal = icon
 	position = Vector2(x, y)
@@ -17,9 +17,7 @@ func _process(_delta: float) -> void:
 	update_view()
 
 func update_cost():
-	var base_cost = building_setting[0]
-	var count = building_data[0]
-	cost = ceil(base_cost * pow(1.15, count))
+	cost = ceil(base_cost * pow(1.15, building_data[0]))
 	update_view()
 
 func update_view():
