@@ -22,4 +22,11 @@ offset_left = 200.0
 offset_right = 400.0
 offset_bottom = 80.0
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 7.0
+offset_right = 289.0
+offset_bottom = 47.0
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

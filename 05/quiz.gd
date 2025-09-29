@@ -29,5 +29,5 @@ func check_answer(guess_key):
 
 func _end_game(message):
 	left_guess = 0
-	var answer = TalentData.talent_settings[answer_key]["name"]
+	var answer = TalentData.talent_settings[answer_key][0]
 	$Label.text = "[center]%s\nThe answer is\n%s[/center]" % [message, answer]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ctpxlupusti7y"]
 
-[ext_resource type="Script" uid="uid://d28q37dakeu1m" path="res://15/talent.gd" id="1_5gsg6"]
+[ext_resource type="Script" uid="uid://d28q37dakeu1m" path="res://05/talent.gd" id="1_5gsg6"]
 
 [node name="Talent" type="Control"]
 layout_mode = 3

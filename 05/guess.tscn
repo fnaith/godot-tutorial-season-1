@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dckl3o6bgw7wr"]
 
-[ext_resource type="Script" uid="uid://cl4illbediysv" path="res://15/guess.gd" id="1_ygyef"]
+[ext_resource type="Script" uid="uid://cl4illbediysv" path="res://05/guess.gd" id="1_ygyef"]
 
 [node name="Row" type="Control"]
 layout_mode = 3
