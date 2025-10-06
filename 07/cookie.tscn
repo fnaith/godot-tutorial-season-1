@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://c48tq11epf5mx"]
+
+[ext_resource type="Script" uid="uid://mx5xowrpvnmr" path="res://07/cookie.gd" id="1_cgts3"]
+[ext_resource type="Texture2D" uid="uid://gmhrqfqeykvh" path="res://07/img/Cookies_(50820431116).png" id="2_t4a2r"]
+
+[node name="Cookie" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cgts3")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 256.0
+pivot_offset = Vector2(128, 128)
+texture_normal = ExtResource("2_t4a2r")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Cookie" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 376.0
+offset_right = 276.0
+offset_bottom = 416.0
+
+[node name="CPS" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 406.0
+offset_right = 276.0
+offset_bottom = 446.0
+
+[node name="CPC" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 436.0
+offset_right = 276.0
+offset_bottom = 476.0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

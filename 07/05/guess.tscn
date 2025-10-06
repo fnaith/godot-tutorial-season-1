@@ -1,0 +1,102 @@
+[gd_scene load_steps=2 format=3 uid="uid://dckl3o6bgw7wr"]
+
+[ext_resource type="Script" uid="uid://bkgbnl27bu7p" path="res://06/05/guess.gd" id="1_xfweb"]
+
+[node name="Row" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xfweb")
+
+[node name="Name" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 98.0
+offset_bottom = 38.0
+
+[node name="Label" type="RichTextLabel" parent="Name"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 5.0
+offset_right = 98.0
+offset_bottom = 45.0
+bbcode_enabled = true
+
+[node name="Language" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 2.0
+offset_right = 138.0
+offset_bottom = 38.0
+
+[node name="Label" type="RichTextLabel" parent="Language"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 5.0
+offset_right = 38.0
+offset_bottom = 45.0
+bbcode_enabled = true
+
+[node name="Generation" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 2.0
+offset_right = 318.0
+offset_bottom = 38.0
+
+[node name="Label" type="RichTextLabel" parent="Generation"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 5.0
+offset_right = 178.0
+offset_bottom = 45.0
+bbcode_enabled = true
+
+[node name="Hair" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 2.0
+offset_right = 418.0
+offset_bottom = 38.0
+
+[node name="Label" type="RichTextLabel" parent="Hair"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 5.0
+offset_right = 98.0
+offset_bottom = 45.0
+bbcode_enabled = true
+
+[node name="Height" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 2.0
+offset_right = 478.0
+offset_bottom = 38.0
+
+[node name="Label" type="RichTextLabel" parent="Height"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 5.0
+offset_right = 58.0
+offset_bottom = 45.0
+bbcode_enabled = true
+
+[node name="Birthday" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 2.0
+offset_right = 558.0
+offset_bottom = 38.0
+
+[node name="Label" type="RichTextLabel" parent="Birthday"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 5.0
+offset_right = 78.0
+offset_bottom = 45.0
+bbcode_enabled = true
