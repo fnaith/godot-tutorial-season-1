@@ -15,13 +15,13 @@ func enter(new_mini_game_key):
 	game.on_end_game.connect(end)
 	visible = true
 
+func end(score):
+	CookieData.mini_game_data[mini_game_key][0] += score
+	$Huh.visible = true
+
 func exit():
 	visible = false
 	$Huh.visible = false
 	mini_game_key = null
 	remove_child(game)
 	game = null
-
-func end(score):
-	CookieData.mini_game_data[mini_game_key][0] += score
-	$Huh.visible = true
