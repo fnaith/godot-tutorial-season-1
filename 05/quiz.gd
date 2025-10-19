@@ -10,7 +10,7 @@ func _ready() -> void:
 			var talent = preload("./talent.tscn").instantiate()
 			$Talents.add_child(talent)
 			talent.init(self, talent_key, x * 100, y * 40)
-	$Label.text = "[center]Guesses left : %d[/center]" % left_guess
+	$Label.text = "[center]Guesses Left : %d[/center]" % left_guess
 
 func check_answer(guess_key):
 	if left_guess > 0:
@@ -19,15 +19,14 @@ func check_answer(guess_key):
 		guess.init(answer, guess_key, 0, (5 - left_guess) * 40)
 
 		if answer == guess_key:
-			_end_game("You Win!")
+			end_game("You Win!")
 		else:
 			left_guess -= 1
 			if left_guess > 0:
-				$Label.text = "[center]Guesses left : %d[/center]" % left_guess
+				$Label.text = "[center]Guesses Left : %d[/center]" % left_guess
 			else:
-				_end_game("You Lose.")
+				end_game("You Lose.")
 
-func _end_game(message):
-	left_guess = 0
+func end_game(message):
 	var answer = TalentData.talent_settings[answer][0]
-	$Label.text = "[center]%s\nThe answer is\n%s[/center]" % [message, answer]
+	$Label.text = "[center]%s\nThe Answer Is\n%s[/center]" % [message, answer]

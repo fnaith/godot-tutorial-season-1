@@ -8,9 +8,9 @@ func _ready() -> void:
 	update_view()
 
 func update_view() -> void:
-	$Red.color.a = 1.0 if 0 == light_id else 0.2
-	$Yellow.color.a = 1.0 if 1 == light_id else 0.2
-	$Green.color.a = 1.0 if 2 == light_id else 0.2
+	$Red.color.a = 1.0 if light_id == 0 else 0.2
+	$Yellow.color.a = 1.0 if light_id == 1 else 0.2
+	$Green.color.a = 1.0 if light_id == 2 else 0.2
 
 func next_light(pressed_light_id):
 	if light_id == pressed_light_id:

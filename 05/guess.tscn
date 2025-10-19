@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cl4illbediysv" path="res://05/guess.gd" id="1_ygyef"]
 
-[node name="Row" type="Control"]
+[node name="Guess" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
